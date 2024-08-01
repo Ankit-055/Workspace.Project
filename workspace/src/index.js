@@ -7,7 +7,9 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter basename={Window.location.pathname || ''}>
+     <ContextComponent />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
@@ -15,3 +17,8 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+// BrowserRouter = HTML5 url API popState pushState readyState
+// MemoryRouter = Url is not changed // server enviornments // react-native //testing
+// HashRouter = old browsers // window.location.hash // www.x.com/#/my-account
